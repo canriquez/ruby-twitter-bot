@@ -13,15 +13,20 @@ class TwitterHandler
         @d100_tweet
     end
 
-
     def last_hash_tweet?
-
       @client.search("from:#{USER} #{TWEET_HASH}", result_type: "recent", tweet_mode: "extended").take(1).each do |tweet|
         @last_tweet = tweet.full_text
       end
+      puts @last_tweet  # This will be eliminated. for the moment puts out the last tweet found
+    
       return false if @last_tweet == ''
       @d100_tweet = @last_tweet.match(D100_FORMAT)
       return @d100_tweet
+    end
+
+    def send_100DC_tweet(raw_text)
+        #this method should send a prevalidated message with the required format
+        return @client.update(raw_text)
     end
 
     private
