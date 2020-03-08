@@ -1,6 +1,8 @@
 require 'twitter'
+require_relative "../secret/key.rb"
 
 class TwitterHandler
+    include TwitterDev
 
     def initialize(user,hash,d100format)
         @user = user
@@ -25,10 +27,10 @@ class TwitterHandler
     private
     def twitter_dev_init
         return Twitter::REST::Client.new do |config|
-            config.consumer_key        = "auRK87I4xef1N1BcfRIb5E57E"
-            config.consumer_secret     = "oN0IdmZZqrZ70E4hsSwN9ZrZ0qQSMnPBEDWaT9cLBAn4UPmf2b"
-            config.access_token        = "3008434995-wX7wx9qD1Z3YpmoYgXfyKZltYDW0sVkMn57Uh1f"
-            config.access_token_secret = "PmxF7C6Pl7reRvlDXTjBpw8laDTrl7zL3JCO0jyL2PxdS"
+            config.consumer_key        = CONFIG_CONSUMER_KEY
+            config.consumer_secret     = CONFIG_CONSUMER_SECRET
+            config.access_token        = CONFIG_ACCESS_TOKEN
+            config.access_token_secret = CONFI_ACCESS_TOCKEN_SECRET
           end
     end
 
