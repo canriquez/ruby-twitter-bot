@@ -2,7 +2,7 @@ require 'twitter'
 require_relative "../secret/key.rb"
 
 class TwitterHandler
-    include TwitterDev
+    include EnviVars
 
     def initialize(user,hash,d100format)
         @user = user
@@ -22,7 +22,7 @@ class TwitterHandler
             @d100_record << (tweet.full_text.match(D100_FORMAT).to_a << tweet.full_text)
         end
       end
-      return @d100_record[-1]
+      return @d100_record[-1].nil? ? false: @d100_record[-1]
 
     end
 

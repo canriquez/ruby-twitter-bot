@@ -18,8 +18,8 @@ class GithubHandler
         user =  @githubins.user(GITLOG)
         repos = user.rels[:repos].get.data
         git_hash =  @githubins.contents repos[-1].full_name, path:FILEPATH
-        puts Base64.decode64(git_hash.content)
-        #pp repos
+        pp Base64.decode64(git_hash.content).match(D100_TWITT_MATCH)
+
     end
 
 private

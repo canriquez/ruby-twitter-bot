@@ -5,6 +5,7 @@ require_relative '../lib/github_handler.rb'
 USER = '@cranriquez'
 TWEET_HASH = "#100daysofCode"
 D100_FORMAT =  /[R](\d+)[D](\d+)/
+D100_TWITT_MATCH = /^\*\*Twitter\:([R](\d)+[D](\d+).*\#100DaysOfCode)/
 
 d100_tweet = TwitterHandler.new(USER,TWEET_HASH,D100_FORMAT)
 
