@@ -7,7 +7,9 @@ D100_FORMAT =  /[R](\d+)[D](\d+)/
 
 d100_tweet = TwitterHandler.new(USER,TWEET_HASH,D100_FORMAT)
 
-p d100_tweet.last_hash_tweet?   # Test is last has has been twited for my user.
+p d100_tweet.last_hash_tweet?   # Test if last has has been twited for my user.
 
-p d100_tweet.send_100DC_tweet('hello world!, live from Salta, Argentina')
+
+#Main program should be able to detect if tweet has same id and react if has been sent already.
+#p d100_tweet.send_100DC_tweet('hello world!, live from Salta, T2 Argentina')
 
