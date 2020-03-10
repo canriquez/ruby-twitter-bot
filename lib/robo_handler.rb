@@ -24,4 +24,10 @@ module RoboHandler
         return result.to_i
     end
 
+    def build_mail (hm,text)
+        hmp = text
+        hm += "<li>"+hmp+"</li>"
+        puts hmp
+        return hm
+    end
 end
