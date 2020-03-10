@@ -1,5 +1,6 @@
 require 'twitter'
 require_relative "../secret/key.rb"
+require 'time'
 
 class TwitterHandler
     include EnviVars
