@@ -17,6 +17,8 @@ last_on_twitter = d100_tweet.last_hash_tweet?   # Test if 'last' has been twited
 
 if !last_on_twitter.nil? 
     puts "getting : R#{last_on_twitter[0]}D#{last_on_twitter[1]} - '#{last_on_twitter[2][0..40]}...' - created : #{last_on_twitter[3]}" 
+    tweet_time = Time.parse(last_on_twitter[3])
+    puts "...last tweet update is from #{(Time.now-tweet_time)/60/60.to_i} hours ago."
 else
     puts "... failing to get a valid tweet publishd with #{TWEET_HASH} hash..."
     puts "... building into report to #{USER} "
