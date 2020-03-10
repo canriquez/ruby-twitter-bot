@@ -12,17 +12,18 @@ class TwitterHandler
         @last_tweet = []
         @d100_tweet
         @rt_regexp = /^RT @/
-        @d100_record = []
+        @d100_record = [[]]
     end
 
     def last_hash_tweet?
-      @client.search("from:#{USER} #{TWEET_HASH}", result_type: "recent", tweet_mode: "extended").take(2).each do |tweet|
-        #@last_tweet << tweet.full_text unless tweet.full_text.match(@rt_regexp)
+      @client.search("from:#{USER} #{TWEET_HASH}", result_type: "recent", tweet_mode: "extended").take(2).each_with_index do |tweet,index|
+        # Checks that the tweet is not a RT and has the D100 format.
         if !tweet.full_text.match(@rt_regexp) && tweet.full_text.match(D100_FORMAT)
+            @d100_record[index] = tweet.created_at.to_s
             @d100_record << (tweet.full_text.match(D100_FORMAT).to_a << tweet.full_text)
         end
       end
-      return @d100_record[-1].nil? ? false: @d100_record[-1][1],@d100_record[-1][2],@d100_record[-1][3]
+      return @d100_record[-1].nil? ? nil: @d100_record[-1][1],@d100_record[-1][2],@d100_record[-1][3],@d100_record[0]
 
     end
 
