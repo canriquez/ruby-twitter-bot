@@ -12,6 +12,7 @@ D100_TWITT_MATCH = /^\*\*Twitter\:([R](\d)+[D](\d+).*\#100DaysOfCodeTest)/
 
 last_on_twitter = []
 last_on_repo = []
+compare = 0
 
 d100_tweet = TwitterHandler.new(USER,TWEET_HASH,D100_FORMAT)
 
@@ -41,20 +42,18 @@ end
 
 # Check if repo and tweet update are the same
 
-p compare_updates(last_on_twitter,last_on_repo)
-=begin 
-if !last_on_repo.nil? && !last_on_twitter.nil?
-   count = 0
-   0.upto(2) do |index|
-    puts ''
-    puts "comparing T: #{last_on_twitter[index]}  vs R: #{last_on_repo[index]}"
-      if  last_on_twitter[index] == last_on_repo[index] 
-         count += 1
-         print "same element"
-      end
-   end
+compare = compare_updates(last_on_twitter,last_on_repo)
+if compare[0] == true && compare[1] <= 24
+    puts "everything looks up to date. Have a good day!"
+elsif compare[0] == false && compare[2] < 0
+    puts "... twitting available update in repo R#{last_on_repo[0]}D#{last_on_repo[1]}."
+    d100_tweet.send_100DC_tweet(last_on_repo[2]) #sending tweet
+elsif compare[0] == true && compare[1] > 24
+    puts "...every update is published but last update has #{compare[2]} days old. Consider writing new update in repo"
+elsif compare[0] == false && compare[2] > 0
+    puts "... Something is wrong. your twitter account (R#{last_on_twitter[0]}D#{last_on_twitter[1]}) is ahead of repo (R#{last_on_repo[0]}D#{last_on_repo[1]})."
+    puts "...consider commiting last twitter record on repo."
 end
-=end
 
 
 
