@@ -15,11 +15,11 @@ class GithubHandler
     end
 
     def read_100dfile
-        user =  @githubins.user(GITLOG)
-        repos = user.rels[:repos].get.data
+        #user =  @githubins.user(GITLOG)
+        repos = @githubins.user(GITLOG).rels[:repos].get.data
         git_hash =  @githubins.contents repos[-1].full_name, path:FILEPATH
-        pp Base64.decode64(git_hash.content).match(D100_TWITT_MATCH)
-
+        text_file =  Base64.decode64(git_hash.content).match(D100_TWITT_MATCH)
+        return text_file.nil? ? false : text_file[2],text_file[3],text_file[1]
     end
 
 private

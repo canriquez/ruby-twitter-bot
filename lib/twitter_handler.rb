@@ -22,7 +22,7 @@ class TwitterHandler
             @d100_record << (tweet.full_text.match(D100_FORMAT).to_a << tweet.full_text)
         end
       end
-      return @d100_record[-1].nil? ? false: @d100_record[-1]
+      return @d100_record[-1].nil? ? false: @d100_record[-1][1],@d100_record[-1][2],@d100_record[-1][3]
 
     end
 
