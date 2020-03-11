@@ -1,4 +1,4 @@
-#!/usr/bin/env ruby
+#!/usr/bin/ruby
 require 'pony'
 require 'time'
 require_relative '../lib/twitter_handler.rb'
@@ -26,7 +26,7 @@ d100_github = GithubHandler.new
 html_message = "<h2> LagarBot Activity report for #{Time.now.strftime("%d/%m/%Y %H:%M:%S")} </h2>"
 html_message += "<ul>"
 
-html_message = build_mail(html_message,"checking last 100DofCode for #{USER}")
+html_message = build_mail(html_message,"checking last tweet update on #{TWEET_HASH} for handle : #{USER}")
 
 last_on_twitter = d100_tweet.last_hash_tweet?   # Test if 'last' has been twited for my user.
 
@@ -46,7 +46,7 @@ last_on_repo = d100_github.read_100dfile
 if !last_on_repo.nil? 
     html_message = build_mail(html_message,"getting : R#{last_on_repo[0]}D#{last_on_repo[1]} - '#{last_on_repo[2][0..40]}...'")
 else
-    html_message = build_mail(html_message,"failing to get a valid record on repo h #{d100_github.gitrepo} ...")
+    html_message = build_mail(html_message,"failing to get a valid record on repo #{d100_github.gitrepo} ...")
     html_message = build_mail(html_message,"building into report to #{USER}  ")
 end
 
@@ -66,7 +66,6 @@ elsif compare[0] == false && compare[2] > 0
 end
 
 mail.SendMail(html_message+"</ul>")
-
 
 
 
