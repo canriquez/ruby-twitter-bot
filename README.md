@@ -53,13 +53,13 @@ To deploy a fully functional local copy, you must install the following gems/lib
 
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
-        ```ruby
+    ```ruby
         module EnviVars
             CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
             CONFIG_CONSUMER_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
             CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
             CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-        ```
+    ```
 ### Install and Configure Octokit
 - Install via Rubygems
     ```gem install octokit```
