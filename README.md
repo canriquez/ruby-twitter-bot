@@ -4,7 +4,7 @@
 
 ![screenshot](./app_screenshot.png)
 
-# This project delivers on following basic specifications
+# This project delivers on the following basic specifications
 - When locally executed, the program checks a specified twitter account and repo to verify the update status.
 - Reads through a specified file inside the github user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
 - Checks for the '**Twitter:RXDYY' mark in the repo's record to identify a valid update.
@@ -53,13 +53,13 @@ To deploy a fully functional local copy, you must install the following gems/lib
 
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
-    ```ruby
-    module EnviVars
-        CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-        CONFIG_CONSUMER_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-        CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-        CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    ```
+        ```ruby
+        module EnviVars
+            CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
+            CONFIG_CONSUMER_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
+            CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
+            CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
+        ```
 ### Install and Configure Octokit
 - Install via Rubygems
     ```gem install octokit```
