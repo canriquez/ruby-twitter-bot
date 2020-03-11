@@ -16,14 +16,14 @@ class PonyHandler
     private
     def mail_init(message)
         return {:to => 'carlos.el.coder@gmail.com', 
-        :subject => "Lagar Robot Message Update ", 
+        :subject => "LagarBot Message Update ", 
         :headers => { 'Content-Type' => 'text/html' },
         :body => " #{message}",
         :via => :smtp, :via_options => {
             :address => 'smtp.gmail.com',
             :port => '587',
-            :user_name => 'carlos.el.coder',
-            :password => '19fiance20',
+            :user_name => EMAIL_LOGIN,
+            :password => EMAIL_PASS,
             :authentication => :plain,
             :domain => "gmail.com"
             }}
