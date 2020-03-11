@@ -37,9 +37,9 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 To deploy a fully functional local copy, you must install the following gems/libraries: 
-- Twitter API Gem: Managing Twitter search and Twitter updates (tweets)
-- Octokit Github Api Gem: Wrapper used to interact with github.com
-- Pony Gem: Used for email handling.
+- [Twitter API Gem:](https://github.com/sferik/twitter) Managing Twitter search and Twitter updates (tweets)
+- [Octokit Github Api Gem:](https://github.com/octokit/octokit.rb) Wrapper used to interact with github.com
+- [Pony Gem:](https://github.com/benprew/pony) Used for email handling.
 
 ### Setup
 - Clone this repository in your local enviroment
@@ -157,9 +157,11 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- etc
+- [Twitter API Gem:](https://github.com/sferik/twitter) 
+- [Octokit Github Api Gem:](https://github.com/octokit/octokit.rb) 
+- [Pony Gem:](https://github.com/benprew/pony)
+- @microverse / The Corgis
+- My Family!
 
 ## 📝 License
 
