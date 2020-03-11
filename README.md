@@ -8,7 +8,7 @@
 - When locally executed, the program checks a specified twitter account and repo to verify the update status.
 - Reads through a specified file inside the github user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
 - Checks for the '**Twitter:RXDYY' mark in the repo's record to identify a valid update.
-- Checks the valid repo update agains the last update available on twitter for the specified user.
+- Checks the valid repo update against the last update available on twitter for the specified user.
 - If repo update is ahead of twitter account, it will tweet the specified update automatically. 
 - If no valid message content updated is available on the repository it will compile a report message.
 - At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
@@ -91,6 +91,7 @@ module EnviVars
     EMAIL_PASS = 'microverse2020'.freeze
 ```
 ```ruby
+# Current SMTP email parameter are defined for GMAIL. Change them at your requirement.
     def mail_init(message)
     { to: 'YOUR OWN EMAIL',
     subject: '',
@@ -108,8 +109,22 @@ module EnviVars
 ```
 
 ### Usage
+- To start the program, run ```bin/./main.rb``` at the root of your repositories local copy
 
 ### Run tests
+- Assuming EnviVars are correctly defined, login into the update file https://github.com/carlosmicro/100-days-of-code/blob/master/r1-log.md
+- Login into the twitter test account and erase all the twitts.
+- Execute the bot ```bin/./main.rb```
+- The local prompt should show the following response:
+```carlos@Carloss-MBP ruby-twitter-bot % bin/./main.rb 
+checking last tweet update on #100daysofCodeTest for handle : @tester_carlos
+failing to get a valid tweet publishd with #100daysofCodeTest hash... for user @tester_carlos
+building into report to @tester_carlos 
+checking github @carlosmicro/100-days-of-code
+getting : R1D14 - 'R1D14.Worked in final details of LagarBot...'
+twitting available update in repo R1D14.
+email sent
+```
 
 ### Deployment
 
