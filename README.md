@@ -125,27 +125,25 @@ getting : R1D14 - 'R1D14.Worked in final details of LagarBot...'
 twitting available update in repo R1D14.
 email sent
 ```
-- Inmediatly after this prompt, the twitter account should update to:
+- Soon after this prompt is received, the twitter account should update to:
 
 ![screenshot](./img/tweet-success.png)
 
 ### Deployment
 
+For further testing purposes, this bot could be deployed in a small server like raspberry pi 3. 
+
+In this server, a cronjob could be defined to execute the ```lagarbot``` program every 24 hs, to ensure a daily check of progress updates to the #100-days-of-code community. 
 
 
 ## Authors
 
-👤 **Author1**
+👤 Carlos Anriquez
 
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
+- Github: [@canriquez](https://github.com/canriquez)
+- Twitter: [@cranriquez](https://twitter.com/cranriquez)
+- Linkedin: [linkedin](https://www.linkedin.com/in/carlosanriquez/)
 
-👤 **Author2**
-
-- Github: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- Linkedin: [linkedin](https://linkedin.com/linkedinhandle)
 
 ## 🤝 Contributing
 
