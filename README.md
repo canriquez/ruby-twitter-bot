@@ -125,6 +125,9 @@ getting : R1D14 - 'R1D14.Worked in final details of LagarBot...'
 twitting available update in repo R1D14.
 email sent
 ```
+- Inmediatly after this prompt, the twitter account should update to:
+
+![screenshot](./img/tweet-success.png)
 
 ### Deployment
 
