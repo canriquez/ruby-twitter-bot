@@ -1,6 +1,6 @@
 # Microverse's Ruby Capstone Project - ruby-twitter-bot
 
-> This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me to remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting actions to publish my progress.
+> This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting workflow to publish my progress.
 
 ![screenshot](./app_screenshot.png)
 
