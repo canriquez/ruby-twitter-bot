@@ -2,6 +2,10 @@
 
 > This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting workflow to publish my progress.
 
+## Project's Video Presentation
+
+[Lagarbot - ruby-twitter-bot ](https://www.loom.com/share/99420eb2648c423bb910aff5bde6e0b2)
+
 
 # This project delivers on the following basic specifications
 - When locally executed, the program checks a specified twitter account and repo to verify the update status.
@@ -18,11 +22,6 @@
 - Ruby, HTML
 - Rubocop, Stickler, Rspec
 - VS Code
-
-## Video Presentation
-
-[Lagarbot - ruby-twitter-bot ](https://www.loom.com/share/99420eb2648c423bb910aff5bde6e0b2)
-
 
 ## Getting Started
 
