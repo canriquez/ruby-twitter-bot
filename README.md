@@ -85,27 +85,27 @@ module EnviVars
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 ```For pony email, SMTP email server is configured in lib/robo_duties.rb file```
 
-    ```ruby
-    # email - gmail account data
-        EMAIL_LOGIN = 'carlos.el.coder'.freeze
-        EMAIL_PASS = 'microverse2020'.freeze
-    ```
-    ```ruby
-        def mail_init(message)
-        { to: 'YOUR OWN EMAIL',
-        subject: '',
-        headers: { 'Content-Type' => 'text/html' },
-        body: " #{message}",
-        via: :smtp, via_options: {
-            address: 'smtp.gmail.com',
-            port: '587',
-            user_name: EMAIL_LOGIN,
-            password: EMAIL_PASS,
-            authentication: :plain,
-            domain: 'gmail.com'
-        } }
-        end
-    ```
+```ruby
+# email - gmail account data
+    EMAIL_LOGIN = 'carlos.el.coder'.freeze
+    EMAIL_PASS = 'microverse2020'.freeze
+```
+```ruby
+    def mail_init(message)
+    { to: 'YOUR OWN EMAIL',
+    subject: '',
+    headers: { 'Content-Type' => 'text/html' },
+    body: " #{message}",
+    via: :smtp, via_options: {
+        address: 'smtp.gmail.com',
+        port: '587',
+        user_name: EMAIL_LOGIN,
+        password: EMAIL_PASS,
+        authentication: :plain,
+        domain: 'gmail.com'
+    } }
+    end
+```
 
 ### Usage
 
