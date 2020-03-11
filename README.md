@@ -64,14 +64,14 @@ To deploy a fully functional local copy, you must install the following gems/lib
     ```gem install octokit```
 - Configure (secret/key.rb) your own octokit access constants
 
-        ```ruby
-        # Octokit Access Constants
-        GITLOG = 'carlosmicro'.freeze
-        GITPASS = 'microverse2020'.freeze
+    ```ruby
+    # Octokit Access Constants
+        GITLOG = 'YOUR OWN USER DATA'.freeze
+        GITPASS = 'YOUR OWN PASS'.freeze
         GITLOGPASS = GITLOG + ':' + GITPASS
-        GITREPO = 'carlosmicro/100-days-of-code'.freeze
-        FILEPATH = '/r1-log.md'.freeze
-        ```
+        GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
+        FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
+    ```
 
 ### Usage
 
