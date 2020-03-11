@@ -23,7 +23,6 @@ module RoboHandler
   def build_mail(htm, text)
     hmp = text
     htm += '<li>' + hmp + '</li>'
-    puts hmp
-    htm
+    [htm, hmp]
   end
 end

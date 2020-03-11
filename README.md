@@ -19,9 +19,9 @@
 - Rubocop, Stickler, Rspec
 - VS Code
 
-## Live Demo
+## Video Presentation
 
-[Live Demo Link](https://livedemo.com)
+[Lagarbot - ruby-twitter-bot ](https://www.loom.com/share/99420eb2648c423bb910aff5bde6e0b2)
 
 
 ## Getting Started

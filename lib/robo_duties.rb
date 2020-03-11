@@ -10,7 +10,7 @@ class RoboDuties
 
   def send_mail(msg)
     Pony.mail(mail_init(msg))
-    puts 'email sent'
+    'email sent'
   end
 
   private
