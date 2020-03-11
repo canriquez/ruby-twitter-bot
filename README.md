@@ -47,7 +47,7 @@ To deploy a fully functional local copy, you must install the following gems/lib
 ### Install and Configure Twitter API Gem
 - Install Twitter API Gem
     
-    gem install twitter
+    ```gem install twitter```
 
 - Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
 
