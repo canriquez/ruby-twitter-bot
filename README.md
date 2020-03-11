@@ -50,8 +50,8 @@ To deploy a fully functional local copy, you must install the following gems/lib
     ```gem install twitter```
 
 - Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
+```for @microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
- 
     ```ruby
     module EnviVars
         CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
