@@ -45,11 +45,11 @@ To deploy a fully functional local copy, you must install the following gems/lib
 - Clone this repository in your local enviroment
 
 ### Install and Configure Twitter API Gem
-- Install Twitter API Gem
+- Install Twitter API Gem via Rubygems
     
     ```gem install twitter```
 
-Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
+- Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
     ```ruby
@@ -59,6 +59,20 @@ Configure (secret/key.rb) your own twitter development account and consumer/acce
         CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
         CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
     ```
+### Install and Configure Octokit
+- Install via Rubygems
+    ```gem install octokit```
+- Configure (secret/key.rb) your own octokit access constants
+
+        ```ruby
+        # Octokit Access Constants
+        GITLOG = 'carlosmicro'.freeze
+        GITPASS = 'microverse2020'.freeze
+        GITLOGPASS = GITLOG + ':' + GITPASS
+        GITREPO = 'carlosmicro/100-days-of-code'.freeze
+        FILEPATH = '/r1-log.md'.freeze
+        ```
+
 ### Usage
 
 ### Run tests
