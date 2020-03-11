@@ -157,9 +157,9 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- [Twitter API Gem:](https://github.com/sferik/twitter) 
-- [Octokit Github Api Gem:](https://github.com/octokit/octokit.rb) 
-- [Pony Gem:](https://github.com/benprew/pony)
+- [Twitter API Gem](https://github.com/sferik/twitter) 
+- [Octokit Github Api Gem](https://github.com/octokit/octokit.rb) 
+- [Pony Gem](https://github.com/benprew/pony)
 - @microverse / The Corgis
 - My Family!
 
