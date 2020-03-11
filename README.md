@@ -5,13 +5,13 @@
 ![screenshot](./app_screenshot.png)
 
 # This project delivers on following basic specifications
-    - When locally executed, the program checks a specified twitter account and repo to verify the update status.
-    - Reads through a specified file inside the github user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
-	- Checks for the '**Twitter:RXDYY' mark in the repo's record to identify a valid update.
-    - Checks the valid repo update agains the last update available on twitter for the specified user.
-    - If repo update is ahead of twitter account, it will tweet the specified update automatically. 
-	- If no valid message content updated is available on the repository it will compile a report message.
-    - At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
+- When locally executed, the program checks a specified twitter account and repo to verify the update status.
+- Reads through a specified file inside the github user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
+- Checks for the '**Twitter:RXDYY' mark in the repo's record to identify a valid update.
+- Checks the valid repo update agains the last update available on twitter for the specified user.
+- If repo update is ahead of twitter account, it will tweet the specified update automatically. 
+- If no valid message content updated is available on the repository it will compile a report message.
+- At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
 
 
 ## Built With
@@ -50,6 +50,7 @@ To deploy a fully functional local copy, you must install the following gems/lib
     ```gem install twitter```
 
 - Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
+
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
     ```ruby
@@ -62,7 +63,9 @@ To deploy a fully functional local copy, you must install the following gems/lib
 ### Install and Configure Octokit
 - Install via Rubygems
     ```gem install octokit```
-- Configure (secret/key.rb) your own octokit access constants
+- Configure (secret/key.rb) your own octokit access constants.
+
+```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
     ```ruby
     # Octokit Access Constants
@@ -71,6 +74,37 @@ To deploy a fully functional local copy, you must install the following gems/lib
         GITLOGPASS = GITLOG + ':' + GITPASS
         GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
         FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
+    ```
+### Install and Pony email gem
+- Install via Rubygems
+
+    ```sudo gem install pony```
+
+- Configure (secret/key.rb) your own pony email access constants.
+
+```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
+```For pony email, SMTP email server is configured in lib/robo_duties.rb file```
+
+    ```ruby
+    # email - gmail account data
+        EMAIL_LOGIN = 'carlos.el.coder'.freeze
+        EMAIL_PASS = 'microverse2020'.freeze
+    ```
+    ```ruby
+        def mail_init(message)
+        { to: 'YOUR OWN EMAIL',
+        subject: '',
+        headers: { 'Content-Type' => 'text/html' },
+        body: " #{message}",
+        via: :smtp, via_options: {
+            address: 'smtp.gmail.com',
+            port: '587',
+            user_name: EMAIL_LOGIN,
+            password: EMAIL_PASS,
+            authentication: :plain,
+            domain: 'gmail.com'
+        } }
+        end
     ```
 
 ### Usage
