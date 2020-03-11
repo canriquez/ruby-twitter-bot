@@ -67,14 +67,14 @@ module EnviVars
 
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
-    ```ruby
-    # Octokit Access Constants
-        GITLOG = 'YOUR OWN USER DATA'.freeze
-        GITPASS = 'YOUR OWN PASS'.freeze
-        GITLOGPASS = GITLOG + ':' + GITPASS
-        GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
-        FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
-    ```
+```ruby
+# Octokit Access Constants
+    GITLOG = 'YOUR OWN USER DATA'.freeze
+    GITPASS = 'YOUR OWN PASS'.freeze
+    GITLOGPASS = GITLOG + ':' + GITPASS
+    GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
+    FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
+```
 ### Install and Pony email gem
 - Install via Rubygems
 
