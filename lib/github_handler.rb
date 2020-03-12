@@ -12,13 +12,16 @@ class GithubHandler
     @githubins = github_api_init
     @file_data = ''
     @gitrepo = GITREPO
+    @gitlog = GITLOG
+    @filepath = FILEPATH
+    #@d100_tw_match = d100twmatch
   end
 
-  def read_100dfile
-    # user =  @githubins.user(GITLOG)
-    repos = @githubins.user(GITLOG).rels[:repos].get.data
-    git_hash = @githubins.contents repos[-1].full_name, path: FILEPATH
-    text_file = Base64.decode64(git_hash.content).match(D100_TWITT_MATCH)
+  def read_100dfile(d100twmatch)
+    return [false,'no-regex','no-regex'] unless d100twmatch.class == Regexp
+    repos = @githubins.user(@gitlog).rels[:repos].get.data
+    git_hash = @githubins.contents repos[-1].full_name, path: @filepath
+    text_file = Base64.decode64(git_hash.content).match(d100twmatch)
     [text_file.nil? ? nil : text_file[2], text_file[3], text_file[1]]
   end
 

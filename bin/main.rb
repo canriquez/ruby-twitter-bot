@@ -39,7 +39,7 @@ end
 html_message, prompt = robot.build_mail(html_message, "checking github @#{d100_github.gitrepo}")
 puts prompt
 
-last_on_repo = d100_github.read_100dfile
+last_on_repo = d100_github.read_100dfile(D100_TWITT_MATCH)
 
 if !last_on_repo.nil?
   html_message, prompt = robot.build_mail(html_message, "getting : R#{last_on_repo[0]}D#{last_on_repo[1]} - '#{last_on_repo[2][0..40]}...'")
