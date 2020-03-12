@@ -32,7 +32,8 @@ class TwitterHandler
   def send_100dc_tweet(raw_text)
     # this method should send a prevalidated message with the required format
     return false if raw_text.nil?
-    return @client.update(raw_text)? true : false
+
+    @client.update(raw_text) ? true : false
   end
 
   private

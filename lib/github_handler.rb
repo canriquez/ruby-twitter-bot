@@ -14,11 +14,12 @@ class GithubHandler
     @gitrepo = GITREPO
     @gitlog = GITLOG
     @filepath = FILEPATH
-    #@d100_tw_match = d100twmatch
+    # @d100_tw_match = d100twmatch
   end
 
   def read_100dfile(d100twmatch)
-    return [false,'no-regex','no-regex'] unless d100twmatch.class == Regexp
+    return [false, 'no-regex', 'no-regex'] unless d100twmatch.class == Regexp
+
     repos = @githubins.user(GITLOG).rels[:repos].get.data
     git_hash = @githubins.contents repos[-1].full_name, path: @filepath
     text_file = Base64.decode64(git_hash.content).match(d100twmatch)

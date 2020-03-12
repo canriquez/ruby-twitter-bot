@@ -1,11 +1,9 @@
-# rubocop:disable Layout/LineLength
 require './lib/github_handler.rb'
 require 'time'
 
 RSpec.describe GithubHandler do
   let(:github_test) { GithubHandler.new }
-  let(:test_regexp) {/[R](\d+)[D](\d+)/}
-
+  let(:test_regexp) { /[R](\d+)[D](\d+)/ }
 
   describe '#Readout github specified account' do
     it 'passes if searching object is a regexp' do
@@ -18,7 +16,4 @@ RSpec.describe GithubHandler do
       expect(github_test.read_100dfile('bad input')[2]).to eql('no-regex')
     end
   end
-
 end
-
-# rubocop:enable Layout/LineLength
