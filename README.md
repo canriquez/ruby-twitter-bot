@@ -28,18 +28,20 @@
 To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
-To deploy a fully functional local copy, you must install the following gems/libraries: 
+To deploy a fully functional local copy, you must install the following dependencies/libraries: 
 - [Twitter API Gem:](https://github.com/sferik/twitter) Managing Twitter search and Twitter updates (tweets)
 - [Octokit Github Api Gem:](https://github.com/octokit/octokit.rb) Wrapper used to interact with github.com
 - [Pony Gem:](https://github.com/benprew/pony) Used for email handling.
 
 ### Setup
 - Clone this repository in your local enviroment
+- Located on the root of repository execute 
 
-### Install and Configure Twitter API Gem
-- Install Twitter API Gem via Rubygems
-    
-    ```gem install twitter```
+ ```bundle install``` 
+ 
+ This action will install all the required dependencies. 
+
+### Configure Twitter API Gem
 
 - Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
 
@@ -52,9 +54,8 @@ module EnviVars
     CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
     CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
 ```
-### Install and Configure Octokit
-- Install via Rubygems
-    ```gem install octokit```
+### Configure Octokit
+
 - Configure (secret/key.rb) your own octokit access constants.
 
 ```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
@@ -68,9 +69,6 @@ module EnviVars
     FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
 ```
 ### Install and Pony email gem
-- Install via Rubygems
-
-    ```sudo gem install pony```
 
 - Configure (secret/key.rb) your own pony email access constants.
 

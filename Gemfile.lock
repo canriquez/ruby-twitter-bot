@@ -8,6 +8,8 @@ GEM
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     equalizer (0.0.11)
+    faraday (1.0.0)
+      multipart-post (>= 1.2, < 3)
     ffi (1.12.2)
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
@@ -24,13 +26,21 @@ GEM
       ffi-compiler (>= 1.0, < 2.0)
     http_parser.rb (0.6.0)
     jaro_winkler (1.5.4)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
     memoizable (0.4.2)
       thread_safe (~> 0.3, >= 0.3.1)
+    mini_mime (1.0.2)
     multipart-post (2.1.1)
     naught (1.1.0)
+    octokit (4.17.0)
+      faraday (>= 0.9)
+      sawyer (~> 0.8.0, >= 0.5.3)
     parallel (1.19.1)
     parser (2.7.0.4)
       ast (~> 2.4.0)
+    pony (1.13.1)
+      mail (>= 2.0)
     public_suffix (4.0.3)
     rainbow (3.0.0)
     rake (13.0.1)
@@ -44,6 +54,9 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
     ruby-progressbar (1.10.1)
+    sawyer (0.8.2)
+      addressable (>= 2.3.5)
+      faraday (> 0.8, < 2.0)
     simple_oauth (0.3.1)
     thread_safe (0.3.6)
     twitter (7.0.0)
@@ -66,6 +79,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  octokit (~> 4.0)
+  pony
   rubocop
   twitter
 

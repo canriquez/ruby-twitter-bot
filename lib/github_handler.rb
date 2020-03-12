@@ -19,7 +19,7 @@ class GithubHandler
 
   def read_100dfile(d100twmatch)
     return [false,'no-regex','no-regex'] unless d100twmatch.class == Regexp
-    repos = @githubins.user(@gitlog).rels[:repos].get.data
+    repos = @githubins.user(GITLOG).rels[:repos].get.data
     git_hash = @githubins.contents repos[-1].full_name, path: @filepath
     text_file = Base64.decode64(git_hash.content).match(d100twmatch)
     [text_file.nil? ? nil : text_file[2], text_file[3], text_file[1]]
