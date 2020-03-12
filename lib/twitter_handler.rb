@@ -13,7 +13,6 @@ class TwitterHandler
     @d100format = d100format
     @client = twitter_dev_init
     @last_tweet = []
-    @rt_regexp = /^RT @/
     @d100_record = [[]]
   end
 

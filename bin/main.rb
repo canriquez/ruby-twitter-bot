@@ -7,10 +7,10 @@ require_relative '../lib/github_handler.rb'
 require_relative '../lib/robo_duties.rb'
 
 USER = '@tester_carlos'.freeze
-TWEET_HASH = '#100daysofCode'.freeze # using #100daysofCodeTest to avoid spamming during tests
+TWEET_HASH = '#100daysofCodeTest'.freeze # using #100daysofCodeTest to avoid spamming during tests
 D100_FORMAT = /[R](\d+)[D](\d+)/.freeze
-D100_TWITT_MATCH = /^\*\*Twitter\:([R](\d)+[D](\d+).*\#100DaysOfCode)/.freeze
-# Warning: Hash is REGEXP is a TEST (#100DaysOfCodeTest) to avoid spamming on tests
+D100_TWITT_MATCH = /^\*\*Twitter\:.*([R](\d)+[D](\d+).*\#100DaysOfCodeTest)/.freeze
+# Warning: Hash in REGEXP is a TEST (#100DaysOfCodeTest) to avoid spamming on tests
 
 robot = RoboDuties.new
 d100_tweet = TwitterHandler.new(USER, TWEET_HASH, D100_FORMAT)
