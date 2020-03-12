@@ -20,9 +20,9 @@ class TwitterHandler
   def last_hash_tweet?
     @client.search("from:#{@user} #{@tweet_hash} -filter:retweets", result_type: 'recent', tweet_mode: 'extended').take(1).each_with_index do |tweet, index|
       # Checks that the tweet is not a RT and has the D100 format.
-      if tweet.full_text.match(D100_FORMAT)
+      if tweet.full_text.match(@d100format)
         @d100_record[index] = tweet.created_at.to_s
-        @d100_record << (tweet.full_text.match(D100_FORMAT).to_a << tweet.full_text)
+        @d100_record << (tweet.full_text.match(@d100format).to_a << tweet.full_text)
       end
     end
     [@d100_record[-1].nil? ? nil : @d100_record[-1][1], @d100_record[-1][2], @d100_record[-1][3], @d100_record[0]]
@@ -31,7 +31,8 @@ class TwitterHandler
 
   def send_100dc_tweet(raw_text)
     # this method should send a prevalidated message with the required format
-    @client.update(raw_text)
+    return false if raw_text.nil?
+    return @client.update(raw_text)? true : false
   end
 
   private
