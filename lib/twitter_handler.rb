@@ -19,7 +19,7 @@ class TwitterHandler
 
   # rubocop:disable Layout/LineLength
   def last_hash_tweet?
-    @client.search("from:#{USER} #{TWEET_HASH}", result_type: 'recent', tweet_mode: 'extended').take(1).each_with_index do |tweet, index|
+    @client.search("from:#{@user} #{@tweet_hash}", result_type: 'recent', tweet_mode: 'extended').take(1).each_with_index do |tweet, index|
       # Checks that the tweet is not a RT and has the D100 format.
       if !tweet.full_text.match(@rt_regexp) && tweet.full_text.match(D100_FORMAT)
         @d100_record[index] = tweet.created_at.to_s

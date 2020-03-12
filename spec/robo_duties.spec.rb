@@ -1,6 +1,5 @@
 # rubocop:disable Layout/LineLength
 require './lib/robo_duties.rb'
-require './lib/twitter_handler.rb'
 require 'time'
 
 RSpec.describe RoboDuties do
@@ -11,7 +10,6 @@ RSpec.describe RoboDuties do
   let(:lor_ok) { ['1', '10', 'R1D10.Test'] }
   let(:html) { '<h2> this is test </>' }
   let(:text) { 'this is message report...' }
-  let(:tweet_test) { TwitterHandler.new(USER, TWEET_HASH, D100_FORMAT) }
 
   describe '#Compares last-on-twitter vs last-on-repo' do
     it 'Returns [false, 0, -1] : Showing no match between sources and repository ahead of twitter' do
