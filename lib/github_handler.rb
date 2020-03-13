@@ -10,10 +10,9 @@ class GithubHandler
   def initialize
     @githubins = github_api_init
     @file_data = ''
-    @gitrepo = ENV["GITREPO"]
-    @gitlog = ENV["GITLOG"]
-    @filepath = ENV["FILEPATH"]
-
+    @gitrepo = ENV['GITREPO']
+    @gitlog = ENV['GITLOG']
+    @filepath = ENV['FILEPATH']
   end
 
   def read_100dfile(d100twmatch)
@@ -28,6 +27,6 @@ class GithubHandler
   private
 
   def github_api_init
-    Octokit::Client.new(login: ENV["GITLOG"], password: ENV["GITPASS"])
+    Octokit::Client.new(login: ENV['GITLOG'], password: ENV['GITPASS'])
   end
 end

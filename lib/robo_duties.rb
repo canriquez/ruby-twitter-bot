@@ -22,8 +22,8 @@ class RoboDuties
       via: :smtp, via_options: {
         address: 'smtp.gmail.com',
         port: '587',
-        user_name: ENV["EMAIL_LOGIN"],
-        password: ENV["EMAIL_PASS"],
+        user_name: ENV['EMAIL_LOGIN'],
+        password: ENV['EMAIL_PASS'],
         authentication: :plain,
         domain: 'gmail.com'
       } }
