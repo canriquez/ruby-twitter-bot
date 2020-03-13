@@ -1,9 +1,8 @@
+require 'dotenv/load'
 require 'pony'
-require_relative '../secret/key.rb'
 require_relative 'robo_handler.rb'
 
 class RoboDuties
-  include EnviVars
   include RoboHandler
 
   def initialize; end
@@ -23,8 +22,8 @@ class RoboDuties
       via: :smtp, via_options: {
         address: 'smtp.gmail.com',
         port: '587',
-        user_name: EMAIL_LOGIN,
-        password: EMAIL_PASS,
+        user_name: ENV['EMAIL_LOGIN'],
+        password: ENV['EMAIL_PASS'],
         authentication: :plain,
         domain: 'gmail.com'
       } }

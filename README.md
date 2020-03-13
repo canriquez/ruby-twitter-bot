@@ -2,6 +2,9 @@
 
 > This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting workflow to publish my progress.
 
+![screenshot](./img/git_ruby-twitter-bot.gif)
+
+
 ## Project's Video Presentation
 
 [Lagarbot - ruby-twitter-bot ](https://www.loom.com/share/99420eb2648c423bb910aff5bde6e0b2)
@@ -14,6 +17,7 @@
 - Checks the valid repo update against the last update available on twitter for the specified user.
 - If repo update is ahead of twitter account, it will tweet the specified update automatically. 
 - If no valid message content updated is available on the repository it will compile a report message.
+- In the rare case that twitter is ahead of the GitHub repository file, the bot gives a message and recommend update the GitHub repository to match the updates.
 - At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
 
 
@@ -41,49 +45,64 @@ To deploy a fully functional local copy, you must install the following dependen
  
  This action will install all the required dependencies. 
 
-### Configure Twitter API Gem
+ Create a .env file to include your own personalised access keys for all services. Hit the following command at the repositories root:
 
-- Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
+```touch .env```
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
+## Configure main variables 
+
+- Configure at the ```.env``` file your own searching handler and searching hash (Ideally this should be your own user and 100-Days-of-code hash)
 
 ```ruby
-module EnviVars
-    CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_CONSUMER_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
+# Main variables - Change this to adjust the searching handler and searching hash
+
+export CONFIG_USER=<@your-own-user-handler>
+export CONFIG_TWEET_HASH=#100daysofCode
 ```
+
+### Configure Twitter API Gem
+
+- Configure at the ```.env``` file your own twitter development account and consumer/access key/secret/tokens.
+
+```For Twitter: Crete a developer's account and generate the following keys```
+
+[Link for Twitter development account creation](https://developer.twitter.com/en/apply-for-access)
+
+```ruby
+    # Twitter access values for tester_carlos account
+    export CONFIG_CONSUMER_KEY=<your own keys>
+    export CONFIG_CONSUMER_SECRET=<your own keys>
+    export CONFIG_ACCESS_TOKEN=<your own keys>
+    export CONFIG_ACCESS_TOCKEN_SECRET =<your own keys>
+```
+
 ### Configure Octokit
 
-- Configure (secret/key.rb) your own octokit access constants.
+- Configure at the ```.env``` file your own octokit access constants for your github account
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
 ```ruby
 # Octokit Access Constants
-    GITLOG = 'YOUR OWN USER DATA'.freeze
-    GITPASS = 'YOUR OWN PASS'.freeze
-    GITLOGPASS = GITLOG + ':' + GITPASS
-    GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
-    FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
+export GITLOG=<github_user>
+export GITPASS=<account password
+export GITREPO=<github_user>/<repo name>
+export FILEPATH=/<file_name_at_root>
 ```
 ### Install and Pony email gem
 
-- Configure (secret/key.rb) your own pony email access constants.
+- Configure at the ```.env``` file your own pony email access constants.
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 ```For pony email, SMTP email server is configured in lib/robo_duties.rb file```
 
 ```ruby
 # email - gmail account data
-    EMAIL_LOGIN = 'carlos.el.coder'.freeze
-    EMAIL_PASS = 'microverse2020'.freeze
+export EMAIL_LOGIN=<your own login>
+export EMAIL_PASS=<your own pass>
 ```
 ```ruby
 # Current SMTP email parameter are defined for GMAIL. Change them at your requirement.
     def mail_init(message)
-    { to: 'YOUR OWN EMAIL',
+    { to: '<your own email address>',
     subject: '',
     headers: { 'Content-Type' => 'text/html' },
     body: " #{message}",
@@ -106,6 +125,7 @@ module EnviVars
 - Login into the twitter test account and erase all the twitts.
 - Execute the bot ```bin/./main.rb```
 - The local prompt should show the following response:
+
 ```carlos@Carloss-MBP ruby-twitter-bot % bin/./main.rb 
 checking last tweet update on #100daysofCodeTest for handle : @tester_carlos
 failing to get a valid tweet publishd with #100daysofCodeTest hash... for user @tester_carlos
