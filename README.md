@@ -43,7 +43,7 @@ To deploy a fully functional local copy, you must install the following dependen
 
  Create a .env file to include your own personalised access keys for all services. Hit the following command at the repositories root:
 
-    ``` touch .env ````
+```touch .env````
 
 ### Configure Twitter API Gem
 
@@ -57,7 +57,7 @@ To deploy a fully functional local copy, you must install the following dependen
     export CONFIG_CONSUMER_SECRET=E5Kv1mgREoyObiRipvCx0UuzbEr6p3BP4OFrx43Y1rtshbz8yl
     export CONFIG_ACCESS_TOKEN=1237459699978682368-GrdAmvON8RK9SEPYZh1tfMfFknvTzM
     CONFIG_ACCESS_TOCKEN_SECRET =Jp74ZAPe9TcaABIHwhKova0pVdS8iZuGYiiQn1rSLGO1w
-    ```
+```
 
 ### Configure Octokit
 
@@ -108,6 +108,7 @@ export EMAIL_PASS=microverse2020
 - Login into the twitter test account and erase all the twitts.
 - Execute the bot ```bin/./main.rb```
 - The local prompt should show the following response:
+
 ```carlos@Carloss-MBP ruby-twitter-bot % bin/./main.rb 
 checking last tweet update on #100daysofCodeTest for handle : @tester_carlos
 failing to get a valid tweet publishd with #100daysofCodeTest hash... for user @tester_carlos
