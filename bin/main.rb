@@ -62,7 +62,7 @@ elsif compare[0] == false && (compare[2]).negative?
   puts prompt
   puts "#{last_on_repo[2]} : results : #{d100_tweet.send_100dc_tweet(last_on_repo[2])}" # sending tweet
 elsif compare[0] == true && compare[1] > 24
-  html_message, prompt = robot.build_mail(html_message, "every update is published but last update has #{compare[2]} days old. Consider writing new update in repo")
+  html_message, prompt = robot.build_mail(html_message, "every update is published but last update has #{compare[1]/24} days old. Consider writing new update in repo")
   puts prompt
 elsif compare[0] == false && (compare[2]).positive?
   html_message, prompt = robot.build_mail(html_message, "Something is wrong. your twitter account (R#{last_on_twitter[0]}D#{last_on_twitter[1]}) is ahead of repo (R#{last_on_repo[0]}D#{last_on_repo[1]}).")
