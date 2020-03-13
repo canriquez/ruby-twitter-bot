@@ -43,7 +43,7 @@ To deploy a fully functional local copy, you must install the following dependen
 
  Create a .env file to include your own personalised access keys for all services. Hit the following command at the repositories root:
 
-```touch .env````
+```touch .env```
 
 ### Configure Twitter API Gem
 
@@ -56,7 +56,7 @@ To deploy a fully functional local copy, you must install the following dependen
     export CONFIG_CONSUMER_KEY=dnaDAIY0kx9kmwx0sv4Bj4vZI
     export CONFIG_CONSUMER_SECRET=E5Kv1mgREoyObiRipvCx0UuzbEr6p3BP4OFrx43Y1rtshbz8yl
     export CONFIG_ACCESS_TOKEN=1237459699978682368-GrdAmvON8RK9SEPYZh1tfMfFknvTzM
-    CONFIG_ACCESS_TOCKEN_SECRET =Jp74ZAPe9TcaABIHwhKova0pVdS8iZuGYiiQn1rSLGO1w
+    export CONFIG_ACCESS_TOCKEN_SECRET =Jp74ZAPe9TcaABIHwhKova0pVdS8iZuGYiiQn1rSLGO1w
 ```
 
 ### Configure Octokit
