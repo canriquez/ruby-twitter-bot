@@ -7,7 +7,6 @@ module RoboHandler
     upd = lot[1].to_i - lor[1].to_i
     if count == 3
       # if equal, returns true and tweet age in hours
-      puts "exiting here"
       [true, days_old?(lot[3]), upd]
     elsif count < 3
       [false, 0, upd]
