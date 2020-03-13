@@ -2,6 +2,9 @@
 
 > This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting workflow to publish my progress.
 
+![screenshot](./img/git_ruby-twitter-bot.gif)
+
+
 ## Project's Video Presentation
 
 [Lagarbot - ruby-twitter-bot ](https://www.loom.com/share/99420eb2648c423bb910aff5bde6e0b2)
@@ -14,6 +17,7 @@
 - Checks the valid repo update against the last update available on twitter for the specified user.
 - If repo update is ahead of twitter account, it will tweet the specified update automatically. 
 - If no valid message content updated is available on the repository it will compile a report message.
+- In the rare case that twitter is ahead of the GitHub repository file, the bot gives a message and recommend update the GitHub repository to match the updates.
 - At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
 
 
