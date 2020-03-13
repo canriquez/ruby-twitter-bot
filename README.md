@@ -49,6 +49,17 @@ To deploy a fully functional local copy, you must install the following dependen
 
 ```touch .env```
 
+## Configure main variables 
+
+- Configure at the ```.env``` file your own searching handler and searching hash (Ideally this should be your own user and 100-Days-of-code hash)
+
+```ruby
+# Main variables - Change this to adjust the searching handler and searching hash
+
+export CONFIG_USER=<@your-own-user-handler>
+export CONFIG_TWEET_HASH=#100daysofCode
+```
+
 ### Configure Twitter API Gem
 
 - Configure at the ```.env``` file your own twitter development account and consumer/access key/secret/tokens.
