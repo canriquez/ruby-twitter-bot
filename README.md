@@ -49,7 +49,9 @@ To deploy a fully functional local copy, you must install the following dependen
 
 - Configure at the ```.env``` file your own twitter development account and consumer/access key/secret/tokens.
 
-```For Twitter: [Crete a developer's account](https://developer.twitter.com/en/apply-for-access) and generate the following keys```
+```For Twitter: Crete a developer's account and generate the following keys```
+
+[Link for Twitter development account creation](https://developer.twitter.com/en/apply-for-access)
 
 ```ruby
     # Twitter access values for tester_carlos account
