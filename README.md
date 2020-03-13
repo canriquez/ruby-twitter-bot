@@ -41,44 +41,46 @@ To deploy a fully functional local copy, you must install the following dependen
  
  This action will install all the required dependencies. 
 
+ Create a .env file to include your own personalised access keys for all services. Hit the following command at the repositories root:
+
+    ``` touch .env ````
+
 ### Configure Twitter API Gem
 
-- Configure (secret/key.rb) your own twitter development account and consumer/access key/secret/tokens.
+- Configure at the ```.env``` file your own twitter development account and consumer/access key/secret/tokens.
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
+```For Twitter: [Crete a developer's account](https://developer.twitter.com/en/apply-for-access) and generate the following keys```
 
 ```ruby
-module EnviVars
-    CONFIG_CONSUMER_KEY = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_CONSUMER_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_ACCESS_TOKEN = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-    CONFIG_ACCESS_TOCKEN_SECRET = 'YOUR OWN TWITTER DEV ACCOUNT DATA'.freeze
-```
+    # Twitter access values for tester_carlos account
+    export CONFIG_CONSUMER_KEY=dnaDAIY0kx9kmwx0sv4Bj4vZI
+    export CONFIG_CONSUMER_SECRET=E5Kv1mgREoyObiRipvCx0UuzbEr6p3BP4OFrx43Y1rtshbz8yl
+    export CONFIG_ACCESS_TOKEN=1237459699978682368-GrdAmvON8RK9SEPYZh1tfMfFknvTzM
+    CONFIG_ACCESS_TOCKEN_SECRET =Jp74ZAPe9TcaABIHwhKova0pVdS8iZuGYiiQn1rSLGO1w
+    ```
+
 ### Configure Octokit
 
-- Configure (secret/key.rb) your own octokit access constants.
+- Configure at the ```.env``` file your own octokit access constants for your github account
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 
 ```ruby
 # Octokit Access Constants
-    GITLOG = 'YOUR OWN USER DATA'.freeze
-    GITPASS = 'YOUR OWN PASS'.freeze
-    GITLOGPASS = GITLOG + ':' + GITPASS
-    GITREPO = 'OWN USER INFO/OWN REPO NAME INFO'.freeze
-    FILEPATH = '/FILE NAME LOCATED IN REPO ROOT'.freeze
+export GITLOG=<github_user>
+export GITPASS=<account password
+export GITREPO=<github_user>/<repo name>
+export FILEPATH=/<file_name_at_root>
 ```
 ### Install and Pony email gem
 
-- Configure (secret/key.rb) your own pony email access constants.
+- Configure at the ```.env``` file your own pony email access constants.
 
-```@microverse Code Reviewers: Temporary EnviVars are defined to simplify code functionality testing```
 ```For pony email, SMTP email server is configured in lib/robo_duties.rb file```
 
 ```ruby
 # email - gmail account data
-    EMAIL_LOGIN = 'carlos.el.coder'.freeze
-    EMAIL_PASS = 'microverse2020'.freeze
+export EMAIL_LOGIN=carlos.el.coder
+export EMAIL_PASS=microverse2020
 ```
 ```ruby
 # Current SMTP email parameter are defined for GMAIL. Change them at your requirement.
