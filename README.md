@@ -55,10 +55,10 @@ To deploy a fully functional local copy, you must install the following dependen
 
 ```ruby
     # Twitter access values for tester_carlos account
-    export CONFIG_CONSUMER_KEY=dnaDAIY0kx9kmwx0sv4Bj4vZI
-    export CONFIG_CONSUMER_SECRET=E5Kv1mgREoyObiRipvCx0UuzbEr6p3BP4OFrx43Y1rtshbz8yl
-    export CONFIG_ACCESS_TOKEN=1237459699978682368-GrdAmvON8RK9SEPYZh1tfMfFknvTzM
-    export CONFIG_ACCESS_TOCKEN_SECRET =Jp74ZAPe9TcaABIHwhKova0pVdS8iZuGYiiQn1rSLGO1w
+    export CONFIG_CONSUMER_KEY=<your own keys>
+    export CONFIG_CONSUMER_SECRET=<your own keys>
+    export CONFIG_ACCESS_TOKEN=<your own keys>
+    export CONFIG_ACCESS_TOCKEN_SECRET =<your own keys>
 ```
 
 ### Configure Octokit
@@ -81,13 +81,13 @@ export FILEPATH=/<file_name_at_root>
 
 ```ruby
 # email - gmail account data
-export EMAIL_LOGIN=carlos.el.coder
-export EMAIL_PASS=microverse2020
+export EMAIL_LOGIN=<your own login>
+export EMAIL_PASS=<your own pass>
 ```
 ```ruby
 # Current SMTP email parameter are defined for GMAIL. Change them at your requirement.
     def mail_init(message)
-    { to: 'YOUR OWN EMAIL',
+    { to: '<your own email address>',
     subject: '',
     headers: { 'Content-Type' => 'text/html' },
     body: " #{message}",
