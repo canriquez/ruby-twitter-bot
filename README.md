@@ -45,10 +45,9 @@ To deploy a fully functional local copy, you must install the following dependen
  
  This action will install all the required dependencies. 
 
- Create a .env file to include your own personalised access keys for all services. Hit the following command at the repositories root:
-
-```touch .env```
-
+ See the details below to modify and include all your personal access keys and values in the root file  .env 
+ 
+ 
 ## Configure main variables 
 
 - Configure at the ```.env``` file your own searching handler and searching hash (Ideally this should be your own user and 100-Days-of-code hash)
