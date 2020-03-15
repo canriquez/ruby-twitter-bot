@@ -11,6 +11,12 @@ D100_FORMAT = /[R](\d+)[D](\d+)/.freeze
 D100_TWITT_MATCH = /^\*\*Twitter\:.*([R](\d)+[D](\d+).*\#100DaysOfCodeTest)/.freeze
 
 robot = RoboDuties.new
+if robot.sanity_check != 'Sanity Check Ok'
+  puts robot.sanity_check
+  puts '.. exiting program'
+  exit
+end
+
 d100_tweet = TwitterHandler.new(ENV['CONFIG_USER'], ENV['TWEET_HASH'], D100_FORMAT)
 d100_github = GithubHandler.new
 

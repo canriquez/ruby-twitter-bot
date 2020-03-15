@@ -12,6 +12,28 @@ class RoboDuties
     'email sent'
   end
 
+  def sanity_check
+    missing = []
+    sanity = { CONFIG_USER: ENV['CONFIG_USER'],
+               CONFIG_TWEET_HASH: ENV['CONFIG_TWEET_HASH'],
+               CONFIG_CONSUMER_KEY: ENV['CONFIG_CONSUMER_KEY'],
+               CONFIG_CONSUMER_SECRET: ENV['CONFIG_CONSUMER_SECRET'],
+               CONFIG_ACCESS_TOKEN: ENV['CONFIG_ACCESS_TOKEN'],
+               CONFIG_ACCESS_TOCKEN_SECRET: ENV['CONFIG_ACCESS_TOCKEN_SECRET'],
+               GITLOG: ENV['GITLOG'],
+               GITPASS: ENV['GITPASS'],
+               GITREPO: ENV['GITREPO'],
+               FILEPATH: ENV['FILEPATH'],
+               EMAIL_LOGIN: ENV['EMAIL_LOGIN'],
+               EMAIL_PASS: ENV['EMAIL_PASS'] }
+    sanity.each { |key, value| value == '' ? missing << key : false }
+    if !missing.empty?
+      "Sanity Check Error: Some variables withouth configuration at .env file: \n #{missing}"
+    else
+      'Sanity Check Ok'
+    end
+  end
+
   private
 
   def mail_init(message)
