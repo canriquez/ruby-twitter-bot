@@ -11,7 +11,7 @@ D100_FORMAT = /[R](\d+)[D](\d+)/.freeze
 D100_TWITT_MATCH = /^\*\*Twitter\:.*([R](\d)+[D](\d+).*\#100DaysOfCodeTest)/.freeze
 
 robot = RoboDuties.new
-if robot.sanity_check !='Sanity Check Ok'
+if robot.sanity_check != 'Sanity Check Ok'
   puts robot.sanity_check
   puts '.. exiting program'
   exit
