@@ -1,6 +1,6 @@
 # Microverse's Ruby Capstone Project - ruby-twitter-bot
 
-> This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code repo, and at the same time simplify my twitting workflow to publish my progress.
+> This project consists of building a twitter bot that sends daily updates of my 100 days of code progress. It should be able to help me remember to commit updates on my 100-Days-of-code Github repository while simplifying my twitting workflow to publish my progress.
 
 ![screenshot](./img/git_ruby-twitter-bot.gif)
 
@@ -12,12 +12,12 @@
 
 # This project delivers on the following basic specifications
 - When locally executed, the program checks a specified twitter account and repo to verify the update status.
-- Reads through a specified file inside the github user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
+- Reads through a detailed file inside the GitHub user's fork of 100-days-of-code: https://github.com/carlosmicro/100-days-of-code
 - Checks for the '**Twitter:RXDYY' mark in the repo's record to identify a valid update.
-- Checks the valid repo update against the last update available on twitter for the specified user.
-- If repo update is ahead of twitter account, it will tweet the specified update automatically. 
-- If no valid message content updated is available on the repository it will compile a report message.
-- In the rare case that twitter is ahead of the GitHub repository file, the bot gives a message and recommend update the GitHub repository to match the updates.
+- For the specified user, It checks the correct repo update against the last update available on twitter. 
+- If the repo update is ahead of the twitter account, it will tweet the specified update automatically. 
+- If no valid message content updated is available on the repository, it will compile a report message.
+- In the rare case that twitter is ahead of the GitHub repository file, the bot gives a console message. Next release feature: Bot updates the GitHub repository to match the updates.
 - At the end of execution, the bot will send a detailed report of all performed actions to a specified email account.
 
 
@@ -29,7 +29,7 @@
 
 ## Getting Started
 
-To get a local copy up and running follow these simple example steps.
+To get a local copy up and running, follow these simple example steps.
 
 ### Prerequisites
 To deploy a fully functional local copy, you must install the following dependencies/libraries: 
@@ -38,19 +38,19 @@ To deploy a fully functional local copy, you must install the following dependen
 - [Pony Gem:](https://github.com/benprew/pony) Used for email handling.
 
 ### Setup
-- Clone this repository in your local enviroment
+- Clone this repository in your local environment
 - Located on the root of repository execute 
 
  ```bundle install``` 
  
  This action will install all the required dependencies. 
 
- See the details below to modify and include all your personal access keys and values in the root file  .env 
+ See the details below to modify and include all your access keys and values in the root file  .env 
  
  
 ## Configure main variables 
 
-- Configure at the ```.env``` file your own searching handler and searching hash (Ideally this should be your own user and 100-Days-of-code hash)
+- Configure at the ```.env``` file your twitter handler and searching hash (Ideally this should be your user and 100-Days-of-code hash)
 
 ```ruby
 # Main variables - Change this to adjust the searching handler and searching hash
@@ -61,7 +61,7 @@ export CONFIG_TWEET_HASH=#100daysofCode
 
 ### Configure Twitter API Gem
 
-- Configure at the ```.env``` file your own twitter development account and consumer/access key/secret/tokens.
+- Configure at the ```.env``` file your twitter development account and consumer/access key/secret/tokens.
 
 ```For Twitter: Crete a developer's account and generate the following keys```
 
@@ -77,7 +77,7 @@ export CONFIG_TWEET_HASH=#100daysofCode
 
 ### Configure Octokit
 
-- Configure at the ```.env``` file your own octokit access constants for your github account
+- Configure at the ```.env``` file your octokit access constants for your GitHub account
 
 
 ```ruby
@@ -89,17 +89,17 @@ export FILEPATH=/<file_name_at_root>
 ```
 ### Install and Pony email gem
 
-- Configure at the ```.env``` file your own pony email access constants.
+- Configure at the ```.env``` file your pony email access constants.
 
 ```For pony email, SMTP email server is configured in lib/robo_duties.rb file```
 
 ```ruby
-# email - gmail account data
+# email - Gmail account data
 export EMAIL_LOGIN=<your own login>
 export EMAIL_PASS=<your own pass>
 ```
 ```ruby
-# Current SMTP email parameter are defined for GMAIL. Change them at your requirement.
+# Current SMTP email parameters are defined for GMAIL. Change them to your requirement.
     def mail_init(message)
     { to: '<your own email address>',
     subject: '',
@@ -121,13 +121,13 @@ export EMAIL_PASS=<your own pass>
 
 ### Run tests
 - Assuming EnviVars are correctly defined, login into the update file https://github.com/carlosmicro/100-days-of-code/blob/master/r1-log.md
-- Login into the twitter test account and erase all the twitts.
+- Login into the twitter test account and erase all the tweets.
 - Execute the bot ```bin/./main.rb```
 - The local prompt should show the following response:
 
 ```carlos@Carloss-MBP ruby-twitter-bot % bin/./main.rb 
-checking last tweet update on #100daysofCodeTest for handle : @tester_carlos
-failing to get a valid tweet publishd with #100daysofCodeTest hash... for user @tester_carlos
+checking last tweet update on #100daysofCodeTest for handle: @tester_carlos
+failing to get a valid tweet published with #100daysofCodeTest hash... for user @tester_carlos
 building into report to @tester_carlos 
 checking github @carlosmicro/100-days-of-code
 getting : R1D14 - 'R1D14.Worked in final details of LagarBot...'
@@ -156,7 +156,7 @@ In this server, a cronjob could be defined to execute the ```lagarbot``` program
 
 ## 🤝 Contributing
 
-Contributions, issues and feature requests are welcome!
+Contributions, issues, and feature requests are welcome!
 
 Feel free to check the [issues page](issues/).
 
